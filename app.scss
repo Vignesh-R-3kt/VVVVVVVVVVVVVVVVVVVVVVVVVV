@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Niconne&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Permanent Marker", cursive;
+  font-family: "Niconne", cursive;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10% 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("./NicePng_scratch-texture-png_697114.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  .text-container {
+    p {
+      text-align: center;
+      font-size: 46px;
+      color: #343434;
+
+      span {
+        color: #1fa09c;
+      }
+    }
+  }
+}

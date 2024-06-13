@@ -4,15 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>...</title>
     <link rel="stylesheet" href="./app.css">
+    <link rel="icon" href="./icons8-music-188.png">
 </head>
 
 <body>
     <div class="text-container">
-
-        <p><span></span></p>
+        <p><span>Javascript </span></p>
     </div>
+
+    <div class="container">
+        <h1 id="text"></h1>
+    </div>
+
+    <script>
+        // script.js
+        document.addEventListener('DOMContentLoaded', () => {
+            const text = document.getElementById('text');
+            let textParticles = [];
+
+            function createTextParticle(x, y, char) {
+                const textParticle = document.createElement('div');
+                textParticle.classList.add('text-particle');
+                textParticle.style.left = `${x}px`;
+                textParticle.style.top = `${y}px`;
+                textParticle.textContent = char;
+                document.body.appendChild(textParticle);
+                textParticles.push(textParticle);
+
+                textParticle.addEventListener('animationend', () => {
+                    textParticle.remove();
+                    textParticles = textParticles.filter(tp => tp !== textParticle);
+                });
+            }
+
+            function onMouseMove(event) {
+                text.style.opacity = 0;
+
+                const randomChar = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random letter
+                createTextParticle(event.clientX, event.clientY, "Hello world");
+            }
+
+            function onMouseStop() {
+                text.style.opacity = 1;
+            }
+
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseout', onMouseStop);
+        });
+
+    </script>
 </body>
 
 </html>

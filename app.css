@@ -15,11 +15,22 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
   background: url("./6193409.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
+}
+body .text-container {
+  position: relative;
+  z-index: 10;
+  background: #f3f3f3;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: 1px solid #ddaf13;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 body .text-container p {
   text-align: center;
@@ -28,4 +39,28 @@ body .text-container p {
 }
 body .text-container p span {
   color: #1fa09c;
+}
+
+.container {
+  position: relative;
+}
+
+#text {
+  font-size: 3rem;
+  transition: opacity 0.5s ease;
+}
+
+.text-particle {
+  position: absolute;
+  font-size: 1.8rem;
+  color: #9e422b;
+  pointer-events: none;
+  animation: textMove 1s forwards;
+}
+
+@keyframes textMove {
+  to {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
 }/*# sourceMappingURL=app.css.map */
